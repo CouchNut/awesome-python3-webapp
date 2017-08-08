@@ -7,14 +7,17 @@ __author__ = 'Copper'
 import asyncio, orm
 from models import User
 
+
 async def connecDB(loop):
-	username = 'root'
-	password = '1234'
-	dbname = 'awesome'
-	await orm.create_pool(loop, user = username, password = password, db = dbname)
+    username = 'root'
+    password = '1234'
+    dbname = 'awesome'
+    await orm.create_pool(loop, user=username, password=password, db=dbname)
+
 
 async def destoryDB():
-	await orm.destory_pool()
+    await orm.destory_pool()
+
 
 # async def test_findAll(loop):
 # 	await connecDB(loop)
@@ -37,13 +40,14 @@ async def destoryDB():
 # 	await destoryDB()
 
 async def test_insert(loop):
-	await connecDB(loop)
-	for x in range(100):
-		name = 'User_%03d' % x
-		email = 'User_%03d@example.com' % x
-		user = User(name=name, email=email, passwd='1234567890', image='about:blank')
-		await user.save()
-	await destoryDB()
+    await connecDB(loop)
+    for x in range(100):
+        name = 'User_%03d' % x
+        email = 'User_%03d@example.com' % x
+        user = User(name=name, email=email, passwd='1234567890', image='about:blank')
+        await user.save()
+    await destoryDB()
+
 
 # async def test_update(loop):
 # 	await connecDB(loop)
@@ -74,3 +78,4 @@ loop.run_until_complete(test_insert(loop))
 # loop.run_until_complete(test_remove(loop))
 
 loop.close()
+

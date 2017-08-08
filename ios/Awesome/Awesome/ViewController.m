@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *datadd = @"sdfsd";
+    NSData *data = [datadd dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *result = [data base64EncodedDataWithOptions:<#(NSDataBase64EncodingOptions)#>];
+    
+    
 }
 
 

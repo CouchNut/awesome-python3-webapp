@@ -9,7 +9,7 @@ __author__ = 'Copper'
 '''
 
 configs = {
-	'db' : {
-		'host' : '127.0.0.1'
-	}
+    'db': {
+        'host': '127.0.0.1'
+    }
 }
